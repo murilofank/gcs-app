@@ -13,11 +13,12 @@ jobs:
       postgres:
         image: postgres:latest
         ports:
-          - 3030:5432
+          - 5432:5432
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
           POSTGRES_DB: db_pg
+          POSTGRES_HOST: postgres
         options: >-
           --health-cmd="pg_isready"
           --health-interval=10s
