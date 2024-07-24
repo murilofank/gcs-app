@@ -13,11 +13,13 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Build the Vue.js application
-RUN cd backend/ && node index.js
-
-# Set the command to run the application
-CMD ["serve", "-s", "dist"]
-
 # Expose the port the app runs on
-EXPOSE 80
+EXPOSE 3000
+
+WORKDIR /gcs-app/backend
+
+# Build the Vue.js application
+RUN node index.js
+
+# Command to run the application
+CMD ["node", "index.js"]
