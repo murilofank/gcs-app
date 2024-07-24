@@ -19,7 +19,7 @@ services:
       dockerfile: Dockerfile
     container_name: my-app
     environment:
-      DB_HOST: db
+      DB_HOST: localhost
       DB_PORT: 5432
       DB_USER: postgres
       DB_PASS: postgres
