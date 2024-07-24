@@ -2,12 +2,11 @@
 FROM node:16-alpine
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /gcs-app
 
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 
-RUN cd gcs-project/
 # Install dependencies
 RUN npm install
 
@@ -15,10 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the Vue.js application
-RUN cd backend/
-
-# Use a minimal HTTP server to serve the built application
-RUN node index.js
+RUN cd backend/ && node index.js
 
 # Set the command to run the application
 CMD ["serve", "-s", "dist"]
