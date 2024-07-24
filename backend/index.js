@@ -52,7 +52,7 @@ app.get('/users', async (req, res) => {
           <title>Users List</title>
         </head>
         <body>
-          <h1>Users List</h1>
+          <h1>Users List:</h1>
           ${userTable}
         </body>
       </html>
