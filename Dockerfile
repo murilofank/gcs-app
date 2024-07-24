@@ -16,10 +16,5 @@ COPY . .
 # Expose the port the app runs on
 EXPOSE 3000
 
-WORKDIR /gcs-app/backend
-
-# Build the Vue.js application
-RUN node index.js
-
 # Command to run the application
 CMD ["node", "index.js"]
