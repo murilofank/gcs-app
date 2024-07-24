@@ -43,7 +43,7 @@ jobs:
       #   run: npm run test
 
       - name: Run DB migrations
-        run: npx sequelize-cli db:migrate
+        run: cd backend && npx sequelize-cli db:migrate
 
       - name: Build Docker image
         run: docker build -t vue-app-dev .
