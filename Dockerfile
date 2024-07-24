@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy the package.json and package-lock.json files
 COPY package*.json ./
 
+RUN cd gcs-project/
 # Install dependencies
 RUN npm install
 
